@@ -3,6 +3,9 @@ public class SizeKSubSet {
   public List<List<Integer>> subSet(int[] array, int k) {
   	List<List<Integer>> result = new ArrayList<List<Integer>>();
   	List<Integer> A = new ArrayList<Integer>();
+  	if (k > array.length) {
+  		return result;
+  	}
   	helper(array, A, k, 0, result);
   	return result;
   }
@@ -26,7 +29,7 @@ public class SizeKSubSet {
   
   public static void main(String[] args) {
   	SizeKSubSet test = new SizeKSubSet();
-  	int[] array = new int[]{1,2,3,4};
+  	int[] array = new int[]{1,2};
   	System.out.println(test.subSet(array, 2));
   }
 }
